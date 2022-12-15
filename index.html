@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Signup / Login</title>
+	<style type="text/css">
+		
+		body
+		{
+			background-color: #344a72;
+			font-family: 'Roboto',sans-serif;
+		}
+		#sign
+		{
+			width: 360px;
+			height: 520px;
+			margin: auto;
+			background-color: white;
+			border-radius: 3px;
+		}
+
+		h1
+		{
+			text-align: center;
+			padding-top: 15px;
+		}
+		h4
+		{
+			text-align: center;
+		}
+		form
+		{
+			width: 300px;
+			margin-left: 20px;
+		}
+
+		form label
+		{
+			display: flex;
+			margin-top: 20px;
+			font-size: 18px;
+
+		}
+
+		form input
+		{
+			width: 100%;
+			padding:10px ;
+			border: none;
+			border: 1px solid gray;
+			border-radius: 6px;
+			outline: none;
+		}
+		input[type="button"]
+		{
+			width: 320px;
+			height: 35px;
+			margin-top: 20px;
+			border: none;
+			background-color: #49c1a2;
+			color: white;
+			font-size: 18px;
+			cursor: pointer;
+
+		}
+		input[type="submit"]
+		{
+			width: 320px;
+			height: 35px;
+			margin-top: 20px;
+			border: none;
+			background-color: #49c1a2;
+			color: white;
+			font-size: 18px;
+			cursor: pointer;
+
+		}
+
+		p{
+			text-align: center;
+			padding-top: 20px;
+			font-size: 15px;
+		}
+		.para
+		{
+			text-align: center;
+			color:black;
+			font-size: 15;
+			margin-top: -10px;
+		}
+		.para a
+		{
+			color: #49c1a2;
+		}
+		.para span
+		{
+			color: #49c1a2;
+			cursor: pointer;
+		}
+		#login
+		{
+			margin-top: 20px;
+			width: 360px;
+			height:350px;
+			margin: auto;
+			background-color: white;
+			border-radius: 3px;
+			display: none;
+		}
+		#spp
+		{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+<div id="sign">
+	<h1>Sign Up</h1>
+	<form>
+		<label>First Name</label>
+		<input type="text" placeholder="Enter the First Name" autofocus id="fs"  name="">
+
+		<label>Last Name</label>
+		<input type="text" placeholder="Enter the Last Name" id="ls" name="">
+
+		<label>Email</label>
+		<input type="email" placeholder="Enter the Email"  id="em"   name="">
+
+		<label>Password</label>
+		<input type="password" placeholder="Enter the Password"  id="ps"   name="">
+
+		<input type="button" value="Signup" id="btn" onclick="sign()" name="">	
+	</form>
+<p>By clicking the Sign Up button , You agree to Login</p>
+<p class="para" >Click Here Login Account? <span onclick="p1()">Login Here</span></p>
+</div>
+<div id="login">
+	<h1>Login Here</h1>
+	<form>
+	<label>Email</label>
+		<input type="email" placeholder="Enter the Email" autofocus id="em1"   name="">
+
+		<label>Password</label>
+		<input type="password" placeholder="Enter the Password" id="ps1"   name="">
+
+		<input type="submit" value="Login" onclick="login()" name="">
+		</form>
+		<p>Not Have an account? <span onclick="p2()" id="spp" style="cursor: pointer;, color: blue;">Sign Up Here</a></p>
+</div>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+<script type="text/javascript">
+var database={Email:"",Password:""};
+function p1()
+{
+	if(document.getElementById("login").style.display==="none")
+	{
+	document.getElementById("login").style.display="block";
+	document.getElementById("sign").style.display="none";
+	}
+	else
+	{
+		document.getElementById("login").style.display="none";
+		document.getElementById("sign").style.display="block";
+	}
+}
+function p2()
+{
+	if(document.getElementById("login").style.display==="none")
+	{
+	document.getElementById("login").style.display="block";
+	document.getElementById("sign").style.display="none";
+	}
+	else
+	{
+		document.getElementById("login").style.display="none";
+		document.getElementById("sign").style.display="block";
+	}
+}
+function sign()
+{
+	var ema=document.getElementById("em").value;
+		var pass=document.getElementById("ps").value;
+		if (ema===""&&pass==="")
+		 {
+		 	alert("Please fill Sign Up form");
+		}
+		else
+		{
+			alert("Sign Up Successfull, Please Click Login Here")
+		}
+
+		 
+		em.value="";
+		ps.value=""
+		fs.value="";
+		ls.value="";
+		database.Email=ema;
+		database.Password=pass;
+		}
+	function login()
+	{
+		var email1=document.getElementById("em1").value;
+		var password1=document.getElementById("ps1").value;
+		if(email1===database.Email&&password1===database.Password)
+		{
+			alert("Login Successful");
+			em1.value="";
+			ps1.value="";
+		}
+		else
+		{
+			alert("Sorry Email Id and Password doesn't match")
+		}
+	}
+
+
+
+</script>
+</body>
+</html>
